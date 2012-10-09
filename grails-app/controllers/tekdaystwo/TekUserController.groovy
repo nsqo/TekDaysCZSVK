@@ -99,4 +99,19 @@ class TekUserController {
             redirect(action: "show", id: id)
         }
     }
+	
+	def login = {
+		
+	}
+	
+	def validate = {
+		def user = TekUser.findByUserName(params.username)
+		if(user && user.password == params.password) {
+			session.user = user
+			redirect(controller:'tekEvent',action:'list')
+		}else {
+			flash.message = 'Invalid username and password'
+			render(view:'login')	
+		}
+	}
 }
