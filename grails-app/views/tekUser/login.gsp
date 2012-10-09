@@ -27,16 +27,18 @@
 				</g:eachError>
 			</ul>
 		</g:hasErrors>
-		<g:form action="save">
+		<g:form action="validate">
+		        <input type="hidden" name="cName" value="${cName}">
+      			<input type="hidden" name="aName" value="${aName}">
 			<fieldset class="form">
 
 				<div
-					class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'userName', 'error')} ">
+					class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'username', 'error')} ">
 					<label for="userName"> <g:message
-							code="tekUser.userName.label" default="User Name" />
+							code="tekUser.userName.label" default="Username" />
 
 					</label>
-					<g:textField name="userName" value="${tekUserInstance?.userName}" />
+					<g:textField name="username" value="${tekUserInstance?.userName}" />
 				</div>
 
 				<div

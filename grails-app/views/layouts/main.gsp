@@ -18,9 +18,13 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="/TekDaysTwo/"><img src="${resource(dir: 'images', file: 'tekdays3.png')}" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner">
+		<a href="/TekDaysTwo/"><img src="${resource(dir: 'images', file: 'tekdays3.png')}" alt="Grails"/></a>
+		<br/><g:loginToggle/>
+		</div>
 		<div id="status" role="complementary">
 			<div id="controller-list" role="navigation">
+					
 				<ul>
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>

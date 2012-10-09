@@ -24,4 +24,20 @@ class TekDaysTagLib {
 			}
 		}
 	}
+	
+	def loginToggle = {
+		out << "<div class='logintgl'>"
+		if(session.user){
+			out << "<span style='float:right;'>"
+			out << "Welcome ${session.user}."
+			out << "<a href='${createLink(controller:'tekUser',action:'logout')}' style='margin-left:0.5em;'>"
+			out << "  Logout </a></span>"
+		}
+		else{
+			out << "<span style='float: right;'>"
+			out << "<a href='${createLink(controller:'tekUser',action:'login')}'>"
+			out << "Login </a></span>"
+		}
+		out << "</div><br/>"
+	}
 }
